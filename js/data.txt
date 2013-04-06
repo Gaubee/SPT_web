@@ -1,0 +1,17 @@
+[
+    {
+        "name":"姓名",
+        "age":"年龄",
+        "sex":"性别",   
+    },
+    {
+        "name":"my name",
+        "age":"10",
+        "sex":"man",
+    },
+    {
+        "name":"my name2",
+        "age":"20",
+        "sex":"woman",
+    }
+]

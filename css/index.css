@@ -1,0 +1,264 @@
+html, body
+{
+	margin: 0px 0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/body-bg.png);
+	/*for ie-test vml*//*
+	position: absolute;
+	z-index: -10000;*/
+}
+#head{
+	width: 80%;
+	height: 100px;
+	margin: 0px auto 20px auto;
+	background-color: #3333E6;
+}
+#admin{
+	padding: 10px 18px;
+	background-color: #EEE;
+	width: 50%;
+	float: left;
+}
+#admin_head_photo{
+	float: left;
+	width: 62px;
+	height: 62px;
+	border: 2px solid #666;
+}
+#admin_info{
+	float: left;
+	padding: 10px 0px 0px 18px;
+}
+#admin_name{
+	font-size: 18px;
+	font-weight: bold;
+}
+#admin_teacher{}
+#search{
+	padding: 30px 18px;
+	background-color: #999;
+	width: 29%;
+	float: right;
+}
+#search_text{
+	float: right;
+	width: 120px;/*click width: 200px;*/
+	height: 28px;
+	font-size: 12px;
+	border: 1px solid #333;
+}
+#search_result{
+	display: block;
+	position: absolute;
+	background-color: #E8E8E8;
+	list-style: none;
+	padding: 10px 20px;
+	margin: 0px;
+	width: 160px;
+}
+#search_result li{
+	cursor: pointer;
+	display: block;
+	background-color: red;
+}
+#search_result li.hover{
+	background-color: blue;
+}
+/*       */
+#content{
+	width: 80%;
+	margin: 0px auto 20px auto;
+}
+#student_list{
+	float: left;
+}
+#student_list{
+	width: 30%;
+	height: 480px;
+	overflow: hidden;
+	background-color: #3333E6;	
+}
+#student_list h2{
+	height: 34px;
+	padding: 4px auto 0px auto;
+	margin: 0px auto;
+	background-color: #EEE;
+}
+#student_list_ul{
+	float: left;
+	width: 90%;
+	height: 430px;
+	overflow: auto;
+	margin: 8px 0px 0px 0px;
+	padding: 0px 8px 8px 8px;
+	list-style-type:none;
+}
+#student_list_ul .one_student{
+	float: left;
+	width: 100%;
+	margin: 0px 0px 8px 0px;
+	background-color: #E8E8E8;
+	cursor:pointer;
+}
+#student_list_ul .one_student img{
+	float: left;
+	width: 64px;
+	margin: 0px 5px 0px 0px;
+}
+#student_list_ul .one_student .one_student_info{
+	float: left;
+}
+#student_sign_message{
+	float: left;
+	width: 49%;
+	padding: 0px 0px 0px 2%;
+	width: 68%;
+}
+#student_sign_message_tabs{
+	float: left;
+	margin: 0px;
+	padding:0px;
+}
+#student_sign_message_content{
+	float: left;
+	width: 100%;
+}
+#student_sign_message_content .student-sign-message-content{
+	float: left;
+	background-color: #9e9e9e;
+	/*for ie-test vml*//*
+	position: relative;
+	z-index: -10;*/
+}
+#student_sign_message_content .student-sign-message-content .student_info{
+	float: left;
+	width: 25%;
+	padding: 2%;
+	border-right: 1px solid #666;
+}
+#student_sign_message_content .student-sign-message-content .student_info img{
+	width: 120px;
+}
+#student_sign_message_content .student-sign-message-content .student_info span{
+	color: #333;
+	display: block;
+	margin: 5px 0px 6px 0px;
+	border-style: solid;
+	border-color: #666;
+	border-width: 0px 1px 1px 1px;
+	text-align: center;
+	word-break:break-all;
+	word-wrap: break-word; 
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message {
+	float: left;
+	width: 66%;
+	padding: 2%;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart{
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data{
+	float: right;
+	width: 100%;
+	text-align: right;
+	background-color: #00E;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .time-text{
+	cursor: pointer;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .ui-datepicker{
+	position: absolute;
+	z-index: 2;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .ui-datepicker .ui-datepicker-title{
+	cursor: move;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .date-control{
+	display: block;
+	float: left;  
+
+
+	border-radius: 50%;
+	/*box-shadow: 2px 2px 5px #999;  Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
+
+	width: 7%;
+	height: 8%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0.5em 0;
+	margin-top: 10%;
+	background-color: #333;
+	color: #E8E8E8;
+	cursor: pointer;
+
+	/*behavior:url(ie-css3.htc);*/
+}
+
+#student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-svgs{
+	float: left;
+	width: 80%;
+	margin: 5px 2% 5px 2%;
+	height: 200px;
+	background-color: #FFF;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list{
+	float: left;
+	list-style: none;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	height: 200px;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li{
+	display: block;
+	float: left;
+	/*width: 86%;*/
+	padding: 2%;
+	margin: 0px 0px 5px 0px;
+	background-color: #FFF;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score{
+	float: right;
+	width: 40%;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score .ui-spinner{
+	width: 60%;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score .ui-spinner .spinner{
+	width: 100%;
+	text-align: left;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score .spinner{
+	width: 60%;
+	border: 0px;
+	text-align: right;
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score .score-to-control{
+	width: 30%;
+}
+/*Tab*/
+.tabs li{
+	float: left;
+	display: block;
+	background-color: #66E666;
+	padding: 5px 8px 4px 8px;
+	border-style: solid;
+	border-color: #339933;
+	border-width: 1px 1px 0px 1px;
+	color: #999;
+}
+.tabs li.active{
+	background-color: #339933;
+}
+.tab-content-show{
+	/*position: relative;
+	z-index: 1;*/
+	zoom:1;
+}
+.tab-content-hide{
+	display: none;
+	overflow: hidden;
+	width: 0px;
+	height: 0px;
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<meta name="description" content="Schoolpart-timejob : 校内兼职岗位信息" />
+		<title>校内兼职岗位签到</title>
+		<link rel="stylesheet" type="text/css" href="css/cssbase-min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css">
+		<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
+
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		// <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+		<script src="js/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<!-- plugin -->
+		<script type="text/javascript" src="js/plugin/jquery.tabs.js"></script>
+		<script type="text/javascript" src="js/plugin/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="js/plugin/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="js/plugin/spin.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+	</head>
+	<body>
+		<div id="head">
+			<div id="admin">
+				<img id="admin_head_photo" src="img/res/head.png">
+				<div id="admin_info">
+					<span id="admin_name">XNbumen</span>
+					<a id="Login_out" href="#">Login out</a>
+					<hr />
+					<span id="admin_teacher">Gaubee</span>
+					<span id="admin_phone">18046048000</span>
+				</div>
+			</div>
+			<div id="search">
+				<input id="search_text"/>
+				<ul id="search_result" class="show">
+					<li>search_result<input type="hidden" value=""></li>
+					<li>search_result</li>
+					<li>search_result</li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<div id="student_list">
+				<h2> Student list</h2>
+				<ul id="student_list_ul">
+					<li class="one_student">
+						<img title="21" src="img/res/Sun.png"><!-- title bind with {{id}} -->
+						<div class="one_student_info">
+							<span class="name">sun body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="22" src="img/res/Women.png">
+						<div class="one_student_info">
+							<span class="name">Women body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="23" src="img/res/Monkey.png">
+						<div class="one_student_info">
+							<span class="name">Monkey3 body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="24" src="img/res/Moon.png">
+						<div class="one_student_info">
+							<span class="name">Moon3 body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="25" src="img/res/Monkey.png">
+						<div class="one_student_info">
+							<span class="name">Monkey body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="21" src="img/res/Moon.png">
+						<div class="one_student_info">
+							<span class="name">Moon body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="26" src="img/res/Monkey.png">
+						<div class="one_student_info">
+							<span class="name">Monkey2 body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+					<li class="one_student">
+						<img title="27" src="img/res/Moon.png">
+						<div class="one_student_info">
+							<span class="name">Moon2 body</span> <a href="#">sign in</a>
+							<hr/>
+							<span class="department">department-xi</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="student_sign_message">
+				<ul id="student_sign_message_tabs" class="tabs">
+					<li class="active"><a href="#sign_message_1">Tabssss</a></li>
+					<li><a href="#sign_message_2">Tabssss</a></li>
+				</ul>
+				<div id="student_sign_message_content">
+					<div class="student-sign-message-content tab-content-hide" id="sign_message">
+						<div class="student_info">
+							<img src="img/res/Sun.png">
+							<span class="name">Sun body</span>
+							<span class="department">jisuanjikexu</span>
+							<span class="major">Sbanji</span>
+							<span class="student-id">3111104136</span>
+							<span class="content">evalevalevalevalevalevalevalevalevalevalevalevalevalevalevalevaleval</span>
+						</div>
+						<div class="student_sign_message">
+							<div class="column-chart">
+								<div class="column-chart-data">
+									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
+										—
+									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
+								</div>
+								<span class="date-control postpone">《</span>
+								<div class="column-chart-svgs">
+								</div>
+								<span class="date-control advance">》</span>
+							</div>
+							<ul class="score-list">
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="student-sign-message-content" id="sign_message_1">
+						<div class="student_info">
+							<img src="img/res/Sun.png">
+							<span class="name">Sun body</span>
+							<span class="department">jisuanjikexu</span>
+							<span class="major">Sbanji</span>
+							<span class="student-id">3111104136</span>
+							<span class="content">evalevalevalevalevalevalevalevalevalevalevalevalevalevalevalevaleval</span>
+						</div>
+						<div class="student_sign_message">
+							<div class="column-chart">
+								<div class="column-chart-data">
+									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
+										—
+									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
+								</div>
+								<span class="date-control postpone">《</span>
+								<div class="column-chart-svgs">
+								</div>
+								<span class="date-control advance">》</span>
+							</div>
+							<ul class="score-list">
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="student-sign-message-content" id="sign_message_2">
+						<div class="student_info">
+							<img src="img/res/Monkey.png">
+							<span class="name">zzz body</span>
+							<span class="department">jisuanjikexu</span>
+							<span class="major">Sbanji</span>
+							<span class="student-id">3111104136</span>
+							<span class="content">evalevalevalevalevalevalevalevalevalevalevalevalevalevalevalevaleval</span>
+						</div>
+						<div class="student_sign_message">
+							<div class="column-chart">
+								<div class="column-chart-data">
+									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
+										—
+									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
+								</div>
+								<span class="date-control postpone">《</span>
+								<div class="column-chart-svgs">
+								</div>
+								<span class="date-control advance">》</span>
+							</div>
+							<ul class="score-list">
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+								<li>
+									<span class="time">04-01 12:00~14:00</span>
+									<span class="score">
+										<input class="spinner" title="50" value='50' disabled="disabled"></input>
+										<input type="button" class="score-to-control" value="评分"></input>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="foot">
+			???
+		</div>
+	</body>
+</html>
+<script src="js/index.js" type="text/javascript"></script>
