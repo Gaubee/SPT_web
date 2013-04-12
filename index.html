@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
 
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		// <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+		<!-- // <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
 		<script src="js/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<!-- plugin -->
 		<script type="text/javascript" src="js/plugin/jquery.tabs.js"></script>
@@ -17,6 +17,8 @@
 		<script type="text/javascript" src="js/plugin/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript" src="js/plugin/spin.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+		<script type="text/javascript" src="js/DB.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
 		<div id="head">
@@ -102,7 +104,7 @@
 					<li class="one_student">
 						<img title="27" src="img/res/Moon.png">
 						<div class="one_student_info">
-							<span class="name">Moon2 body</span> <a href="#">sign in</a>
+							<span class="name">Moon2 body</span> <a class="in" href="#">sign in</a>
 							<hr/>
 							<span class="department">department-xi</span>
 						</div>
@@ -111,10 +113,34 @@
 			</div>
 			<div id="student_sign_message">
 				<ul id="student_sign_message_tabs" class="tabs">
-					<li class="active"><a href="#sign_message_1">Tabssss</a></li>
-					<li><a href="#sign_message_2">Tabssss</a></li>
+					<li class="active"><a href="#student_sign_in">帮助说明</a></li>
 				</ul>
 				<div id="student_sign_message_content">
+					<div class="student-sign" id="student_sign_in">
+						<!-- <div class="sign-form">
+							<label>学号</label>
+							<input class="register-num"></input>
+							<hr />
+							<label>密码</label>
+							<input class="password"></input>
+							<hr />
+							<input class="sign-in" type="button" value="登录"></input>
+						</div> -->
+						<h3>标签页的操作</h3>
+						<p>与其他标签页操作一般，除了本帮助页无法关闭外，其他学生信息页单击标签通过右上角的“*”即可关闭信息页，通过点击标签名进行标签切换</p>
+						<h3>查看学生信息</h3>
+						<p>双击学生列表中的学生头像（如果已经打开，则快速定位到该信息页），信息页中左边为学生信息，右边则为签到信息，若选中的时间段（默认为当天至前一周前的7天）有签到记录，则通过点击评分可对学生本次值班进行评分。</p>
+						<h3>选择学生签到时间段</h3>
+						<p>时间范围中，前者为开始时间，后者为结束时间，通过点击时间可弹出日历选择器（可拖动）进行快速选择，再次点击时间可结束时间选择。选择相应的日期，错误的时间段将不会显示任何签到信息，比如开始时间比结束时间更接近现在。正确的时间范围，我们建议是1周（默认）或者更多。“《”与“》”按钮可以以周为单位快速地切换日期。</p>
+						<h3>快速搜索</h3>
+						<p>搜索功能是根据关键字索引名字，我们尽可能给出所有可能的项，即使是只有一个字符能对应上结果，单击结果列表中项即可打开（切换到）该学生的信息页</p>
+						<h3>关于头像</h3>
+						<p>目前为提供头像的功能，但是头像是根据标示来给定，并不是随机，这也是为了提供更好的识别，在拥有足够的信息后，您便可以使用真正的头像</p>
+						<h3>学生签到与签退</h3>
+						<p>在学生列表中点击“签到”即可进行签到（注：如果网速较慢，可能有延迟的相应）。签到后该按钮将变成“签退”字样，在学生值班结束点击“签退”即可在该学生的信息页中增加一条新的签到信息。请对其进行评分（0~100）</p>
+						<h3>关于留言</h3>
+						<p>我们将很快推出留言功能，以提供更好的互动以及信息的交流与采集</p>
+					</div>
 					<div class="student-sign-message-content tab-content-hide" id="sign_message">
 						<div class="student_info">
 							<img src="img/res/Sun.png">
@@ -133,6 +159,24 @@
 								</div>
 								<span class="date-control postpone">《</span>
 								<div class="column-chart-svgs">
+									<!-- <div class="column" style="width:20%;height:100%;margin">
+										<div style="height:13.2%;background-color:#333"></div>
+										<div style="height:22.2%;background-color:#666"></div>
+										<div style="height:4.2%;background-color:#333"></div>
+									</div>
+									<div class="column" style="width:20%;height:100%">
+										<div style="height:3.2%;background-color:#555"></div>
+										<div style="height:24.2%;background-color:#444"></div>
+									</div>
+									<div class="column" style="width:20%;height:100%">
+										<div style="height:6.2%;background-color:#555"></div>
+									</div>
+									<div class="column" style="width:20%;height:100%">
+										<div style="height:13.2%;background-color:#222"></div>
+										<div style="height:6.2%;background-color:#666"></div>
+										<div style="height:22.2%;background-color:#444"></div>
+										<div style="height:7.2%;background-color:#555"></div>
+									</div> -->
 								</div>
 								<span class="date-control advance">》</span>
 							</div>
@@ -196,89 +240,15 @@
 							</ul>
 						</div>
 					</div>
-					<div class="student-sign-message-content" id="sign_message_1">
-						<div class="student_info">
-							<img src="img/res/Sun.png">
-							<span class="name">Sun body</span>
-							<span class="department">jisuanjikexu</span>
-							<span class="major">Sbanji</span>
-							<span class="student-id">3111104136</span>
-							<span class="content">evalevalevalevalevalevalevalevalevalevalevalevalevalevalevalevaleval</span>
-						</div>
-						<div class="student_sign_message">
-							<div class="column-chart">
-								<div class="column-chart-data">
-									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
-										—
-									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
-								</div>
-								<span class="date-control postpone">《</span>
-								<div class="column-chart-svgs">
-								</div>
-								<span class="date-control advance">》</span>
-							</div>
-							<ul class="score-list">
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="student-sign-message-content" id="sign_message_2">
-						<div class="student_info">
-							<img src="img/res/Monkey.png">
-							<span class="name">zzz body</span>
-							<span class="department">jisuanjikexu</span>
-							<span class="major">Sbanji</span>
-							<span class="student-id">3111104136</span>
-							<span class="content">evalevalevalevalevalevalevalevalevalevalevalevalevalevalevalevaleval</span>
-						</div>
-						<div class="student_sign_message">
-							<div class="column-chart">
-								<div class="column-chart-data">
-									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
-										—
-									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
-								</div>
-								<span class="date-control postpone">《</span>
-								<div class="column-chart-svgs">
-								</div>
-								<span class="date-control advance">》</span>
-							</div>
-							<ul class="score-list">
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 		<div id="foot">
-			???
+<p>地址：福建省福州市大学城文贤路一号闽江学院学生公寓二区二号楼A座底层</p>
+<p>邮政编码：350108 联系电话：0591-87428899 邮箱：<a href="mailto:myqg51@163.com">myqg51@163.com</a></p>
+<p>网址：http://www.51myqg.com 闽院勤工微博：<a href="http://weibo.com/51myqg">http://weibo.com/51myqg (新浪)</a> <a href="http://t.qq.com/TEL87428899"> http://t.qq.com/TEL87428899 (腾讯)</a></p>
+<p>Copyright © 2002 - 2013 http://www.51myqg.com All Rights Reserved 版权所有：闽江学院勤工助学指导中心</p>
 		</div>
 	</body>
 </html>
