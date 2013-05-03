@@ -5,14 +5,32 @@
 	global.Did = 0;
 	global.StudentList = [];
 
-	DB.Login(RegisterNum,Password,function(data){
-		$("#admin_name").html(data.name);
-		// $("admin_head_photo").attr("title",data.img);
-		global.Dname = data.name;
-		global.Did = parseInt(data.uid);
-		// alert("welcome "+data.name);
-		afterLogin();
-	});
+	global.LOGIN = function(RegisterNum,Password){
+		DB.Login(RegisterNum,Password,function(data){
+			console.log(data);
+			$("#admin_name").html(data.name);
+			$("#admin_teacher").html(data.responsibleteacher);
+			$("#admin_phone").html(data.phone);
+			// $("admin_head_photo").attr("title",data.img);
+			global.Dname = data.name;
+			global.Did = parseInt(data.uid);
+			// alert("welcome "+data.name);
+			afterLogin();
+			$("#login-frame").animate({
+				"opacity":0
+			},2000,function(){
+				$("#login-frame").css({
+					"display":"none"
+				})
+			});
+		},function(errData){
+			try{
+				alert(errData.Error[0].describe);
+			}catch(e){
+				alert("请检查账号密码！");
+			}
+		});
+	}
 
 function afterLogin () {
 	// body...
@@ -26,10 +44,10 @@ function afterLogin () {
 					'<img title="'+data[i].id+'" src="'+data[i].img+'">'+
 					'<div class="one_student_info">'+
 					'<span class="name" title="'+data[i].RegisterNum+'">'+data[i].Name+'</span>'+
-					(data[i].Logining?'<a class="out" href="#">签退</a>':'<a class="in" href="#">签到</a>')+
 					'<input type="hidden" class="Sid" value="'+data[i].Sid+'" />'+
 					'<hr/>'+
 					'<span class="department">'+data[i].Department+'</span>'+
+					(data[i].Logining?'<a class="out" href="#">签退</a>':'<a class="in" href="#">签到</a>')+
 					'</div>'+
 					'</li>'
 			};

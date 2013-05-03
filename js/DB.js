@@ -53,11 +53,15 @@
 	}
 
 	global.DB = {
-		Login:function(ac,ps,callback){
+		Login:function(ac,ps,callback,errFun){
 			var result,
 			format = function(Sdata){
-				var formatData = Sdata.Login[0];
-				callback(formatData);
+				try{
+					var formatData = Sdata.Login[0];
+					callback(formatData);
+				}catch(e){
+					errFun(Sdata);
+				}
 			};
 			callback = callback ||function(formatData){
 				alert("登录成功,"+formatData.name);

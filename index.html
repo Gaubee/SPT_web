@@ -21,18 +21,37 @@
 		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
+		<div id="login-frame">
+			<div class="head" style="width: 960px;">
+			</div>
+			<div class="content">
+				<div class="login-frame">
+					<div class="frame-head"></div>
+					<div class="frame-form">
+						<span class="text">工号：
+						<input class="action" name="action"></span>
+						<span class="text">密码：
+						<input type="password" class="password" name="password"></span>
+						<input class="bt" type="button" value="登录">
+					</div>
+					<div class="frame-button"></div>
+				</div>
+			</div>
+		</div>
 		<div id="head">
 			<div id="admin">
 				<img id="admin_head_photo" src="img/res/head.png">
 				<div id="admin_info">
-					<span id="admin_name">XNbumen</span>
-					<a id="Login_out" href="#">Login out</a>
-					<hr />
-					<span id="admin_teacher">Gaubee</span>
-					<span id="admin_phone">18046048000</span>
+					所属部门： <span id="admin_name">XNbumen</span>
+					<br />
+					负责老师： <span id="admin_teacher">Gaubee</span>
+					<a id="Login_out" href="#">退出</a>
+					<br />
+					联系方式： <span id="admin_phone">18046048000</span>
 				</div>
 			</div>
 			<div id="search">
+				<input id="search_button" type="button">
 				<input id="search_text"/>
 				<ul id="search_result" class="show">
 					<li>search_result<input type="hidden" value=""></li>
@@ -43,7 +62,7 @@
 		</div>
 		<div id="content">
 			<div id="student_list">
-				<h2> Student list</h2>
+				<h2><!--  Student list --></h2>
 				<ul id="student_list_ul">
 					<li class="one_student">
 						<img title="21" src="img/res/Sun.png"><!-- title bind with {{id}} -->
@@ -113,10 +132,10 @@
 			</div>
 			<div id="student_sign_message">
 				<ul id="student_sign_message_tabs" class="tabs">
-					<li class="active"><a href="#student_sign_in">帮助说明</a></li>
+					<li id="help_tab" class="active"><a href="#student_sign_in">帮助说明</a></li>
 				</ul>
 				<div id="student_sign_message_content">
-					<div class="student-sign" id="student_sign_in">
+					<div class="student-sign" id="student_sign_in" style="font-size:12px;">
 						<!-- <div class="sign-form">
 							<label>学号</label>
 							<input class="register-num"></input>
@@ -127,7 +146,7 @@
 							<input class="sign-in" type="button" value="登录"></input>
 						</div> -->
 						<h3>标签页的操作</h3>
-						<p>与其他标签页操作一般，除了本帮助页无法关闭外，其他学生信息页单击标签通过右上角的“*”即可关闭信息页，通过点击标签名进行标签切换</p>
+						<p>与其他标签页操作一般，除了本帮助页无法关闭外，其他学生信息页单击标签通过右上角的“×”即可关闭信息页，通过点击标签名进行标签切换</p>
 						<h3>查看学生信息</h3>
 						<p>双击学生列表中的学生头像（如果已经打开，则快速定位到该信息页），信息页中左边为学生信息，右边则为签到信息，若选中的时间段（默认为当天至前一周前的7天）有签到记录，则通过点击评分可对学生本次值班进行评分。</p>
 						<h3>选择学生签到时间段</h3>
@@ -153,91 +172,102 @@
 						<div class="student_sign_message">
 							<div class="column-chart">
 								<div class="column-chart-data">
+									日期段
 									<span class="time-star" title="2013-04-01"><span class="time-text">2013-04-01</span></span>
-										—
+									到
 									<span class="time-end" title="2013-06-11"><span class="time-text">2013-06-11</span></span>
 								</div>
-								<span class="date-control postpone">《</span>
-								<div class="column-chart-svgs">
-									<!-- <div class="column" style="width:20%;height:100%;margin">
-										<div style="height:13.2%;background-color:#333"></div>
-										<div style="height:22.2%;background-color:#666"></div>
-										<div style="height:4.2%;background-color:#333"></div>
+								<div class="column-chart-list">
+									<div style="float:left;width:100%;font-size:12px;border-bottom: 1px solid #dcdcdc;padding-bottom:8px;">
+										<span style="padding-left:10%">日期</span>
+										<span style="padding-left:10%">时段</span>
+										<span style="padding-left:50%">评分</span>
 									</div>
-									<div class="column" style="width:20%;height:100%">
-										<div style="height:3.2%;background-color:#555"></div>
-										<div style="height:24.2%;background-color:#444"></div>
-									</div>
-									<div class="column" style="width:20%;height:100%">
-										<div style="height:6.2%;background-color:#555"></div>
-									</div>
-									<div class="column" style="width:20%;height:100%">
-										<div style="height:13.2%;background-color:#222"></div>
-										<div style="height:6.2%;background-color:#666"></div>
-										<div style="height:22.2%;background-color:#444"></div>
-										<div style="height:7.2%;background-color:#555"></div>
-									</div> -->
+									<ul class="score-list">
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+										<li>
+											<span class="time">04-01 12:00~14:00</span>
+											<span class="score">
+												<input class="spinner" title="50" value='50' disabled="disabled"></input>
+												<input type="button" class="score-to-control" value="评分"></input>
+											</span>
+										</li>
+									</ul>
 								</div>
-								<span class="date-control advance">》</span>
+								<br />
+								<div class="column-frame">
+									<span class="date-control postpone"></span>
+									<div class="column-chart-svgs">
+										<!-- <div class="column" style="width:20%;height:100%;margin">
+											<div style="height:13.2%;background-color:#333"></div>
+											<div style="height:22.2%;background-color:#666"></div>
+											<div style="height:4.2%;background-color:#333"></div>
+										</div>
+										<div class="column" style="width:20%;height:100%">
+											<div style="height:3.2%;background-color:#555"></div>
+											<div style="height:24.2%;background-color:#444"></div>
+										</div>
+										<div class="column" style="width:20%;height:100%">
+											<div style="height:6.2%;background-color:#555"></div>
+										</div>
+										<div class="column" style="width:20%;height:100%">
+											<div style="height:13.2%;background-color:#222"></div>
+											<div style="height:6.2%;background-color:#666"></div>
+											<div style="height:22.2%;background-color:#444"></div>
+											<div style="height:7.2%;background-color:#555"></div>
+										</div> -->
+									</div>
+									<span class="date-control advance"></span>
+								</div>
 							</div>
-							<ul class="score-list">
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-								<li>
-									<span class="time">04-01 12:00~14:00</span>
-									<span class="score">
-										<input class="spinner" title="50" value='50' disabled="disabled"></input>
-										<input type="button" class="score-to-control" value="评分"></input>
-									</span>
-								</li>
-							</ul>
 						</div>
 					</div>
 					
@@ -245,10 +275,10 @@
 			</div>
 		</div>
 		<div id="foot">
-<p>地址：福建省福州市大学城文贤路一号闽江学院学生公寓二区二号楼A座底层</p>
-<p>邮政编码：350108 联系电话：0591-87428899 邮箱：<a href="mailto:myqg51@163.com">myqg51@163.com</a></p>
-<p>网址：http://www.51myqg.com 闽院勤工微博：<a href="http://weibo.com/51myqg">http://weibo.com/51myqg (新浪)</a> <a href="http://t.qq.com/TEL87428899"> http://t.qq.com/TEL87428899 (腾讯)</a></p>
-<p>Copyright © 2002 - 2013 http://www.51myqg.com All Rights Reserved 版权所有：闽江学院勤工助学指导中心</p>
+			<p>地址：福建省福州市大学城文贤路一号闽江学院学生公寓二区二号楼A座底层</p>
+			<p>邮政编码：350108 联系电话：0591-87428899 邮箱：<a href="mailto:myqg51@163.com">myqg51@163.com</a></p>
+			<p>网址：http://www.51myqg.com 闽院勤工微博：<a href="http://weibo.com/51myqg">http://weibo.com/51myqg (新浪)</a> <a href="http://t.qq.com/TEL87428899"> http://t.qq.com/TEL87428899 (腾讯)</a></p>
+			<p>Copyright © 2002 - 2013 http://www.51myqg.com All Rights Reserved 版权所有：闽江学院勤工助学指导中心</p>
 		</div>
 	</body>
 </html>

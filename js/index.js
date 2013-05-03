@@ -24,15 +24,39 @@
 		drawPlan,
 		student_sign = $("#student_sign_message_content"),
 		SignIn,
-		SignOut
+		SignOut,
+		login_frame = $("#login-frame .login-frame"),
+		Login_out = $("#Login_out")
 		;
+	login_frame.on("click",".bt",function(){
+		var RegisterNum = login_frame.find(".action").val(),
+			Password = login_frame.find(".password").val();
+		global.LOGIN(RegisterNum,Password);
+
+	});
+	login_frame.on("focus","input",function(){
+		var self = $(this);
+		self.css({"borderColor":"#f1c606"});
+	}).on("blur","input",function(){
+		var self = $(this);
+		self.css({"borderColor":""});
+	})
+	Login_out.on("click",function(){
+		$("#login-frame").css({
+			"display":"block"
+		});
+		login_frame.find(".password").val("");
+		$("#login-frame").animate({
+				"opacity":1
+		},200);
+	})
 
 	appendUserTab = function(sid,title,active){
 		id = 'sign_message_'+sid;
 		var newTab = $("a[href$=#"+id+"]"),DOM;
 		// alert("a[href=#"+id+"]");
 		if (!newTab.length) {
-			newTab = student_sign_message_tabs.append('<li><a href="#'+id+'">'+title+'</a><span class="colse">*</span></li>');
+			newTab = student_sign_message_tabs.append('<li><a href="#'+id+'">'+title+'</a><span class="colse">×</span></li>');
 			DOM = $('<div class="student-sign-message-content" id="'+id+'"></div>');//new Dom
 			student_sign_message_content.append(DOM);
 			setUserInfo(DOM,global.GetStudentMessage(sid));//Init user info
@@ -486,7 +510,7 @@
 			m,
 			d;
 			// global.XX= self;
-		column_chart = self.parent()
+		column_chart = self.parent().parent();
 		time_star = column_chart.find(".time-star");
 		time_end = column_chart.find(".time-end");
 		time_star_text = time_star.attr("title").split("-");
@@ -536,7 +560,7 @@
 		time_end.find(".time-text").html(time_end_text);
 
 		// drawPlan(self.parent().parent().parent())
-		var DOM = self.parent().parent().parent();
+		var DOM = self.parent().parent().parent().parent();
 		global.GetStudentSignMessage(DOM.attr("id").substring(13),function(data){
 			// // console.log(data);
 			refreshSignData(DOM,data);
@@ -603,12 +627,15 @@
 				content.css({"width":"100%"});
 				foot.css({"width":"100%"});
 			};
+		}else if(body_width<=960)
+		{
+			head.css({"width":"89%"});
+			content.css({"width":"89%"});
+			foot.css({"width":"89%"});
 		}else{
-			if (body_width === head.width()) {
-				head.css({"width":"80%"});
-				content.css({"width":"80%"});
-				foot.css({"width":"80%"});
-			};
+			head.css({"width":"960px"});
+			content.css({"width":"960px"});
+			foot.css({"width":"960px"});
 		};
 	};
 	window.resize(response);

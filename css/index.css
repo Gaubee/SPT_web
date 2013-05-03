@@ -3,20 +3,78 @@ html, body
 	margin: 0px 0px;
 	width: 100%;
 	height: 100%;
-	background-image: url(../img/body-bg.png);
+	/*background-image: url(../img/body-bg.png);*/
+	background-color: #fffdee;
 	/*for ie-test vml*//*
 	position: absolute;
 	z-index: -10000;*/
 }
-#head{
-	width: 80%;
-	height: 100px;
+
+#login-frame{
+	width:100%;
+	height: 640px;
+	position: absolute;
+	background-color: #fffdee;
+	background-image: url("../img/login-bg.jpg");
+	background-position: 80% 50%;
+	background-repeat: no-repeat;
+	z-index: 100;
+	margin: 0px auto;
+}
+#login-frame .login-frame{
+	width: 280px;
+	height: 200px;
+	top: 200px;
+	height: 200px;
+	/*background-color: #fffdee;*/
+	padding-top: 20px;
+	margin: 10% 15%;
+}
+#login-frame .login-frame .text{
+	display: block;
+	margin: 6px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#login-frame .login-frame input{
+	height: 26px;
+	width: 230px;
+	border: 1px solid #1b0b2f;
+}
+#login-frame .login-frame .bt{
+	display: block;
+	height: 26px;
+	width: 86px;
+	border: 0px;
+	background-color: #1b0b2f;
+	color: #FFF;
+	cursor: pointer;
+	margin-left: 164px;
+	/*float: right;*/
+}
+.head{
+	width: 89%;
+	height: 110px;
 	margin: 0px auto 20px auto;
-	background-color: #3333E6;
+	background-color: #150529;
+	background-image: url("../img/head-bg.png");
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+}
+#head{
+	width: 89%;
+	height: 110px;
+	margin: 0px auto 20px auto;
+	background-color: #150529;
+	background-image: url("../img/head-bg.png");
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
 }
 #admin{
-	padding: 10px 18px;
-	background-color: #EEE;
+	padding: 20px 18px;
+	/*background-color: #EEE;*/
 	width: 50%;
 	float: left;
 }
@@ -24,11 +82,21 @@ html, body
 	float: left;
 	width: 62px;
 	height: 62px;
-	border: 2px solid #666;
+	border: 4px solid #666;
 }
 #admin_info{
 	float: left;
-	padding: 10px 0px 0px 18px;
+	padding: 2px 0px 0px 18px;
+	font-size: 12px;
+	font-family: "宋体";
+	line-height: 1.5;
+}
+#admin_info a{
+	color: #d1bf04;
+	text-decoration: none;
+	font-variant: inherit;
+	display: block;
+	float: right;
 }
 #admin_name{
 	font-size: 18px;
@@ -36,38 +104,57 @@ html, body
 }
 #admin_teacher{}
 #search{
-	padding: 30px 18px;
-	background-color: #999;
+	padding: 30px 20px;
+	/*background-color: #999;*/
 	width: 29%;
 	float: right;
 }
 #search_text{
 	float: right;
 	width: 120px;/*click width: 200px;*/
-	height: 28px;
+	height: 18px;
 	font-size: 12px;
-	border: 1px solid #333;
+	/*border: 1px solid #333;*/
+	border: 0px;
+	margin-top: 2px;
+}
+#search_button{
+	width: 23px;
+	height: 23px;
+	background-image: url("../img/search-button.png");
+	border: 0px;
+	float: right;
 }
 #search_result{
 	display: block;
 	position: absolute;
-	background-color: #E8E8E8;
+	background-color: #FFF;
 	list-style: none;
-	padding: 10px 20px;
+	/*padding: 10px 20px;*/
+	padding: 10px 0px;
 	margin: 0px;
-	width: 160px;
+	width: 120px;
+	border: 2px solid #afaeaa;
+	font-size: 12px;
 }
 #search_result li{
 	cursor: pointer;
 	display: block;
-	background-color: red;
+	color: #222222;
+	padding: 5px 20px;
+	/*background-color: red;*/
 }
 #search_result li.hover{
-	background-color: blue;
+	background-color: #b9a803;
+	border-bottom: 1px solid #625b00;
+	border-top: 1px solid #625b00;
 }
 /*       */
-#content{
-	width: 80%;
+.content{
+	width: 89%;
+	margin: 0px auto 20px auto;
+}#content{
+	width: 89%;
 	margin: 0px auto 20px auto;
 }
 #student_list{
@@ -77,13 +164,16 @@ html, body
 	width: 30%;
 	height: 480px;
 	overflow: hidden;
-	background-color: #3333E6;	
+	background-color: #fffdee;	
 }
 #student_list h2{
 	height: 34px;
 	padding: 4px auto 0px auto;
 	margin: 0px auto;
-	background-color: #EEE;
+	/*background-color: #EEE;*/
+	background-image: url("../img/list-head.png");
+	background-repeat: no-repeat;
+	background-position:10px 50% ;
 }
 #student_list_ul{
 	float: left;
@@ -91,23 +181,54 @@ html, body
 	height: 430px;
 	overflow: auto;
 	margin: 8px 0px 0px 0px;
-	padding: 0px 8px 8px 8px;
+	padding: 0px 20px 8px 8px;
 	list-style-type:none;
+	font-size: 12px;
 }
 #student_list_ul .one_student{
 	float: left;
 	width: 100%;
 	margin: 0px 0px 8px 0px;
-	background-color: #E8E8E8;
+	/*background-color: #E8E8E8;*/
 	cursor:pointer;
+	background-image: url("../img/list.png");
+	background-repeat: no-repeat;
+	height: 50px;
+	overflow: hidden;
+	background-position: 100% 0;
+	color: #8e8e8b;
 }
 #student_list_ul .one_student img{
 	float: left;
-	width: 64px;
+	width: 50px;
 	margin: 0px 5px 0px 0px;
 }
 #student_list_ul .one_student .one_student_info{
-	float: left;
+	/*float: left;*/
+	margin-right: 20px;
+}
+#student_list_ul .one_student .name{
+	position: relative;
+	top:7px;
+}
+#student_list_ul .one_student hr{
+	height: 2px;
+}
+#student_list_ul .one_student a{
+	text-decoration:none;
+	display:block;
+	float: right;
+	margin-right: 24px;
+}
+#student_list_ul .one_student .in{
+	color: #665978;
+}
+#student_list_ul .one_student .out{
+	color: #aaaaa9;
+	font-style: italic;
+}
+#student_list_ul .one_student hr{
+	visibility: hidden;
 }
 #student_sign_message{
 	float: left;
@@ -116,9 +237,28 @@ html, body
 	width: 68%;
 }
 #student_sign_message_tabs{
+	width: 100%;
 	float: left;
 	margin: 0px;
-	padding:0px;
+	padding:0px 0px 0px 0px;
+	border-bottom: 5px solid #dcdadb;
+}
+#student_sign_message_tabs li{
+	padding: 2px 8px 2px 5px;
+	margin: 0px 5px 0px 0px;
+	line-height: 14px;
+	cursor: pointer;
+}
+#student_sign_message_tabs li:hover{
+	color: #150529;
+}
+#student_sign_message_tabs li a{
+	color:#150529;
+	font-size: 12px;
+	text-decoration: none;
+	display: block;
+	float: left;
+	padding: 0px 5px 0px 0px;
 }
 #student_sign_in{
 	height: 450px;
@@ -143,7 +283,7 @@ html, body
 }
 #student_sign_message_content .student-sign-message-content{
 	float: left;
-	background-color: #9e9e9e;
+	background-color: #fffdee;
 	width: 100%;
 	/*for ie-test vml*//*
 	position: relative;
@@ -153,19 +293,25 @@ html, body
 	float: left;
 	width: 25%;
 	padding: 2%;
-	border-right: 1px solid #666;
+	/*border-right: 1px solid #666;*/
 }
 #student_sign_message_content .student-sign-message-content .student_info img{
-	width: 120px;
+	background-image: url("../img/detial-img-bg.png");
+	padding: 5px;
+	width: 110px;
+	text-align: center;
+	vertical-align: middle;
 }
 #student_sign_message_content .student-sign-message-content .student_info span{
 	color: #333;
 	display: block;
-	margin: 5px 0px 6px 0px;
-	border-style: solid;
+	margin: 12px 0px 6px 0px;
+	/*border-style: solid;
 	border-color: #666;
-	border-width: 0px 1px 1px 1px;
-	text-align: center;
+	border-width: 0px 1px 1px 1px;*/
+	padding-left: 5px;
+	font-size: 12px;
+	text-align: left;
 	word-break:break-all;
 	word-wrap: break-word; 
 }
@@ -180,10 +326,16 @@ html, body
 	float: right;
 	width: 100%;
 	text-align: right;
-	background-color: #00E;
+	/*background-color: #00E;*/
+	font-size: 12px;
+	margin-right: -26px;
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .time-text{
 	cursor: pointer;
+	border: 1px solid #b7b6ab;
+	margin: 0px 8px;
+	font-size: 10px;
+	padding: 0px 10px;
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .ui-datepicker{
 	position: absolute;
@@ -192,32 +344,57 @@ html, body
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-data .ui-datepicker .ui-datepicker-title{
 	cursor: move;
 }
+.column-chart-list{
+	float: left;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	height: 230px;
+	border:2px solid #efede4;
+	margin-bottom: 30px;
+	margin-top: 8px;
+}
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .date-control{
 	display: block;
 	float: left;  
 
 
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 	/*box-shadow: 2px 2px 5px #999;  Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
 
-	width: 7%;
-	height: 8%;
+	width: 24px;
+	height: 24px;
 	text-align: center;
 	vertical-align: middle;
-	padding: 0.5em 0;
+	/*padding: 0.5em 0;*/
 	margin-top: 10%;
-	background-color: #333;
-	color: #E8E8E8;
+	/*background-color: #333;
+	color: #E8E8E8;*/
 	cursor: pointer;
 
 	/*behavior:url(ie-css3.htc);*/
 }
-
+.column-frame{
+	border: 2px solid #efede4;
+	/*background-image: url("../img/column-frame-bg.png");*/
+	float: left;
+	width: 100%;
+	height: 131px;
+	background-repeat: no-repeat;
+	padding-left: 8px;
+}
+.postpone{
+	background-image: url("../img/column-button.png");
+	background-position: 24px 0;
+}
+.advance{
+	background-image: url("../img/column-button.png");
+}
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-svgs{
 	float: left;
 	width: 80%;
 	margin: 5px 2% 5px 2%;
-	height: 200px;
+	height: 130px;
 	background-color: #FFF;
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .column-chart .column-chart-svgs .column{
@@ -234,11 +411,16 @@ html, body
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .score-list li{
 	display: block;
-	float: left;
+	/*float: right;*/
 	/*width: 86%;*/
 	padding: 2%;
-	margin: 0px 0px 5px 0px;
+	margin: 0px 0px 15px 0px;
 	background-color: #FFF;
+	/*width: 100%;*/
+}
+#student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .time{
+	display: block;
+	float: left;
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score{
 	float: right;
@@ -258,6 +440,8 @@ html, body
 }
 #student_sign_message_content .student-sign-message-content .student_sign_message .score-list li .score .score-to-control{
 	width: 30%;
+	border: 0px;
+	cursor: pointer;
 }
 
 
@@ -265,28 +449,44 @@ html, body
 
 
 #foot{
-	width: 80%;
-	height: 140px;
+	width: 89%;
+	/*height: 140px;*/
 	margin: 520px auto 20px auto;
-	background-color: #3333E6;
+	background-color: #908ca5;
 	font-size: 12px;
+	padding: 10px 0px 10px 0px;
 }
 #foot p{
-	padding: 2px 10px 3px 10px;
+	padding: 0px 10px 0px 0px;
+	text-align: right;
 }
 /*Tab*/
 .tabs li{
-	float: left;
+	float: right;
 	display: block;
-	background-color: #66E666;
+	background-color: #fffdee;
 	padding: 5px 8px 4px 8px;
-	border-style: solid;
+	/*border-style: solid;
 	border-color: #339933;
-	border-width: 1px 1px 0px 1px;
-	color: #999;
+	border-width: 1px 1px 0px 1px;*/
+	color: #fffdee;
+}
+.tabs #help_tab{
+	float: left;
+	background-image: url("../img/help-button.png");
+	width: 80px;
+	height: 24px;
+	color: transparent;
+	background-repeat: no-repeat;
+	background-color: #fffdee;
+	margin-bottom: -10px;
+	padding-left:18px;
+}
+.tabs #help_tab a{
+	line-height: 18px;
 }
 .tabs li.active{
-	background-color: #339933;
+	background-color: #dcdadb;
 }
 .tab-content-show{
 	/*position: relative;
